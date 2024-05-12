@@ -12,19 +12,6 @@ public class BackendFinalApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BackendFinalApplication.class, args);
 	}
-        
- @Bean
- public WebMvcConfigurer corsConfigurer2(){
-     return new WebMvcConfigurer(){
-    @Override
-    public void addCorsMappings(CorsRegistry registry){
-        registry.addMapping("/**")
-                .allowedOrigins("http://localhost:4200")
-                .allowCredentials(true)
-                .allowedHeaders("Origin", "Authorization", "Content-Type")
-                .allowedMethods("GET", "POST", "PUT", "DELETE");
-    }
-   };
- }
+
 
 }
