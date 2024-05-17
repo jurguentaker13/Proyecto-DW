@@ -5,6 +5,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Entity.Alumno;
+import com.example.demo.Entity.Maestro;
 import com.example.demo.Repository.AlumnoRepo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,33 @@ public class ServicioAlumno {
      public List <Alumno> obtenerAlumnoporEdad(int edad1, int edad2){
          return ralumno.findAlumnobyEdad(edad1, edad2);
      }
+     
+     public List <Alumno> findAlumnobyIdMaestro(Maestro id_maestro){
+         return ralumno.findAlumnobyIdMaestro(id_maestro);
+     }
+      public boolean guardar(Alumno e){
+        boolean respuesta = false;
+        try{
+            ralumno.save(e);
+            respuesta = true;
+        }catch(Exception error){
+            System.out.println("Error al guardar" + error);
+            respuesta = false;
+        }
+        return respuesta;
+    }
+        public boolean actualizar(Alumno e){
+        boolean respuesta = false;
+        try{
+            ralumno.save(e);
+            respuesta = true;
+        }catch(Exception error){
+            System.out.println("Error al guardar" + error);
+            respuesta = false;
+        }
+        return respuesta;
+    }
+    
     public boolean eliminar(Alumno e){
         boolean respuesta = false;
         try{

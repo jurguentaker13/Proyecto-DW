@@ -30,6 +30,11 @@ public class Alumno {
     public Alumno() {
     }
 
+    public Alumno(Maestro id_maestro) {
+        this.id_maestro = id_maestro;
+    }
+    
+
     public Alumno(int id_alumno, String nombreA, String apellidoP, String apellidoM, int edad, Maestro id_maestro) {
         this.id_alumno = id_alumno;
         this.nombreA = nombreA;

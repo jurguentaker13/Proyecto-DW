@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MaestroPrueba {
     @Autowired
     ServicioMaestro smaestro;
-     @GetMapping("/Maestro")
+     @GetMapping("/")
     public List<Maestro> prueba2(){
             return smaestro.obtenerTodosMaestros();
             }
