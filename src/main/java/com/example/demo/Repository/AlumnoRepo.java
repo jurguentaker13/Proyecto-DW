@@ -5,6 +5,7 @@
 package com.example.demo.Repository;
 
 import com.example.demo.Entity.Alumno;
+import com.example.demo.Entity.Maestro;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,5 +18,10 @@ public interface AlumnoRepo extends JpaRepository<Alumno, Integer>{
     
     @Query(value = "SELECT * FROM Alumno WHERE edad BETWEEN ?1 AND ?2", nativeQuery = true)
     List <Alumno> findAlumnobyEdad (int edad1, int edad2);
+    
+    
+    @Query(value = "SELECT * FROM Alumno WHERE id_maestro ", nativeQuery = true)
+    List <Alumno> findAlumnobyIdMaestro(Maestro id_maestro);
+    
     
 }
