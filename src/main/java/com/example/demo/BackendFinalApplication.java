@@ -19,6 +19,7 @@ public class BackendFinalApplication {
     public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**")
                 .allowedOrigins( "https://ejercicio20-86165.web.app/")
+                @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
                 .allowCredentials(true)
                 .allowedHeaders("Origin", "Authorization", "Content-Type")
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
