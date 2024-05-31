@@ -18,7 +18,7 @@ public class BackendFinalApplication {
     @Override
     public void addCorsMappings(CorsRegistry registry){
         registry.addMapping("/**")
-                .allowedOrigins( "http://localhost:4200")
+                .allowedOrigins( "https://localhost:4200")
                 .allowCredentials(true)
                 .allowedHeaders("Origin", "Authorization", "Content-Type")
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
