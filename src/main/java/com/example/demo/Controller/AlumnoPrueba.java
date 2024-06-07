@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -44,19 +45,29 @@ public class AlumnoPrueba {
     public List<Alumno> prueba4(Maestro id_maestro) {
         return salumno.findAlumnobyIdMaestro(id_maestro);
     }
-    @PostMapping("/guardarA")
-    public List <Alumno> guardar(int id_alumno, String nombreA, String apellidoP, String apellidoM, int edad, Maestro id_maestro){
+   @PostMapping("/guardarA")
+    public List<Alumno> guardar(
+            @RequestParam int id_alumno,
+            @RequestParam String nombreA,
+            @RequestParam String apellidoP,
+            @RequestParam String apellidoM,
+            @RequestParam int edad,
+            @RequestParam int id_maestro) {  // Assuming id_maestro is an int, adjust if it's an object
+
         Alumno e = new Alumno();
         e.setId_alumno(id_alumno);
         e.setNombreA(nombreA);
         e.setApellidoP(apellidoP);
         e.setApellidoM(apellidoM);
         e.setEdad(edad);
-        e.setId_maestro(id_maestro);
-        if(salumno.guardar(e)){
-             return salumno.obtenerTodosAlumnos();
+        Maestro maestro = new Maestro();
+        maestro.setId_maestro(id_maestro);
+        e.setId_maestro(maestro);  // Assuming you have a method to set a Maestro by id
+
+        if (salumno.guardar(e)) {
+            return salumno.obtenerTodosAlumnos();
         }
-       return null;
+        return null;
     }
      @PutMapping("/actualizarA")
     public List <Alumno> actualizar(int id_alumno, String nombreA, String apellidoP, String apellidoM, int edad, Maestro id_maestro){
