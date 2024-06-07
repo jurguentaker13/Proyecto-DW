@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Alumnos")
+@RequestMapping("/Alumno")
 public class AlumnoPrueba {
     @Autowired
     ServicioAlumno salumno;
