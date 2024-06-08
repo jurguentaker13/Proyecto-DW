@@ -71,15 +71,10 @@ public class MaestroPrueba {
     }
     
     @DeleteMapping("/eliminarM")
-   public List <Maestro> eliminar(int id_maestro, String nombreM, String apellidoP, String apellidoM, int grado, String grupo){
+   public List <Maestro> eliminar(int id_maestro){
         Maestro e = new Maestro();
         e.setId_maestro(id_maestro);
-        e.setNombreM(nombreM);
-        e.setApellidoP(apellidoP);
-        e.setApellidoM(apellidoM);
-        e.setGrado(grado);
-        e.setGrupo(grupo);
-        if(smaestro.guardar(e)){
+        if(smaestro.eliminar(e)){
              return smaestro.obtenerTodosMaestros();
         }
        return null;
