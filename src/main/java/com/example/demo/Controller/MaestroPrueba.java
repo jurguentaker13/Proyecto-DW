@@ -64,7 +64,7 @@ public class MaestroPrueba {
         e.setApellidoM(apellidoM);
         e.setGrado(grado);
         e.setGrupo(grupo);
-        if(smaestro.guardar(e)){
+        if(smaestro.actualizar(e)){
              return smaestro.obtenerTodosMaestros();
         }
        return null;
