@@ -41,7 +41,7 @@ public class AlumnoPrueba {
             return ResponseEntity.notFound().build();
         }
     }
-     @PostMapping("/idMaestro")
+    @PostMapping("/idMaestro")
     public List<Alumno> prueba4(Maestro id_maestro) {
         return salumno.findAlumnobyIdMaestro(id_maestro);
     }
@@ -78,7 +78,7 @@ public class AlumnoPrueba {
         e.setApellidoM(apellidoM);
         e.setEdad(edad);
         e.getId_maestro();
-        if(salumno.guardar(e)){
+        if(salumno.actualizar(e)){
              return salumno.obtenerTodosAlumnos();
         }
        return null;
