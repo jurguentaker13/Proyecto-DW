@@ -45,7 +45,7 @@ public class AlumnoPrueba {
     public List<Alumno> prueba4(Maestro id_maestro) {
         return salumno.findAlumnobyIdMaestro(id_maestro);
     }
-   @PostMapping("/guardarA")
+   @PostMapping("/guardar")
     public List<Alumno> guardar(
             @RequestParam int id_alumno,
             @RequestParam String nombreA,
@@ -69,7 +69,7 @@ public class AlumnoPrueba {
         }
         return null;
     }
-     @PutMapping("/actualizarA")
+     @PutMapping("/actualizar")
     public List <Alumno> actualizar(int id_alumno, String nombreA, String apellidoP, String apellidoM, int edad, Maestro id_maestro){
         Alumno e = new Alumno();
         e.setId_maestro(id_maestro);
@@ -83,7 +83,7 @@ public class AlumnoPrueba {
         }
        return null;
     }
-    @DeleteMapping("/eliminarA")
+    @DeleteMapping("/eliminar")
         public List <Alumno> eliminar(int id_alumno){
         Alumno e = new Alumno();
         e.setId_alumno(id_alumno);
